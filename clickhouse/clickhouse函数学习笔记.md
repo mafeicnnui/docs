@@ -43,3 +43,15 @@
 | lessOrEquals      | SELECT lessOrEquals(12, 120), lessOrEquals(12, 12);    | 小于等于     |
 
  说明：始终返回0表示false 或 1表示true
+
+
+
+### 四、逻辑函数
+
+| 函数名 | 示例                                                         | 备注 |
+| ------ | ------------------------------------------------------------ | ---- |
+| or     | SELECT 12==12 or 12!=10;SELECT or(equals(12, 12), notEquals(12, 10)); | 或   |
+| and    | SELECT 12==12 and 12!=10;SELECT and(equals(12, 12), notEquals(12, 10)); | 与   |
+| not    | SELECT not 12, not 0;SELECT not(12), not(0);                 | 非   |
+
+说明：逻辑操作符（返回0表示false 或 1表示true）
