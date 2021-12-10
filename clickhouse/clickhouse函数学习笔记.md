@@ -55,3 +55,50 @@
 | not    | SELECT not 12, not 0;SELECT not(12), not(0);                 | 非   |
 
 说明：逻辑操作符（返回0表示false 或 1表示true）
+
+
+
+### 五、转换函数
+
+| 函数名    | 示例                                                | 备注             |
+| --------- | --------------------------------------------------- | ---------------- |
+| toInt8    | toInt8(12.3334343)                                  | 数值转8位整数    |
+| toFloat32 | toFloat32(10.001)                                   | 数值转32位浮点数 |
+| toFloat64 | toFloat64(1.000040)                                 | 数值转64位浮点数 |
+|           | SELECT                                              |                  |
+| cast      | '2016-06-15 23:00:00' AS timestamp,                 | 强制类型转换     |
+|           | cast(timestamp AS DateTime) AS datetime,            |                  |
+|           | cast(timestamp AS Date) AS date,                    |                  |
+|           | cast(timestamp, 'String') AS string,                |                  |
+|           | cast(timestamp, 'FixedString(22)') AS fixed_string; |                  |
+
+
+
+| 函数名 | 示例                                    | 备注       |
+| ------ | --------------------------------------- | ---------- |
+| toDate | WITH                                    | 字符转日期 |
+|        | toDate('2019-01-01') AS date,           |            |
+|        | INTERVAL 1 WEEK AS interval_week,       |            |
+|        | toIntervalWeek(1) AS interval_to_week,  |            |
+|        | toIntervalMonth(1) AS interval_to_month |            |
+|        | SELECT                                  |            |
+|        | date + interval_week,                   |            |
+|        | date + interval_to_week,                |            |
+|        | date + interval_to_month;               |            |
+
+
+
+| 函数名     | 示例                                           | 备注           |
+| ---------- | ---------------------------------------------- | -------------- |
+| toDateTime | WITH                                           | 字符转日期时间 |
+|            | toDateTime('2019-01-01 12:10:10') as datetime, |                |
+|            | INTERVAL 1 HOUR AS interval_hour,              |                |
+|            | toIntervalHour(1) as invterval_to_hour         |                |
+|            | SELECT                                         |                |
+|            | plus(datetime, interval_hour),                 |                |
+|            | plus(datetime, invterval_to_hour);             |                |
+|            |                                                |                |
+|            |                                                |                |
+
+
+
